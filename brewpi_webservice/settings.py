@@ -42,10 +42,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'polymorphic',
+    'celery',
+    'viewflow',
     # Local apps
     'authentication',
     'device',
     'controller',
+    'process',
     'devices.core.sensor',
     'devices.core.actuator'
 ]
