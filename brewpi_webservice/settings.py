@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'polymorphic',
+    'kombu.transport.django',
     # Local apps
     'authentication',
     'device',
@@ -136,3 +137,7 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 10
 }
+
+# Celery configuration. XXX: Upgrade to rabbitmq or redis later
+BROKER_URL = 'django://'
+DJKOMBU_POLLING_INTERVAL = 10
