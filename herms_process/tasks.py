@@ -1,17 +1,13 @@
-import os
 import time
+
+from celery import shared_task
+from celery.utils.log import get_task_logger
 
 from devices.core.actuator.models import Valve
 
-from viewflow.flow import flow_job
-from celery import shared_task
-
-from celery.utils.log import get_task_logger
+from process.flow import flow_job
 
 logger = get_task_logger(__name__)
-
-from brewpi_webservice.celery import app
-
 
 
 class HERMSTasks(object):
@@ -30,18 +26,18 @@ class HERMSTasks(object):
         config = process.configuration
 
         all_valves = config.all(Valve)
-        #all_heating_elements = config.all(HeatingElement)
-        #all_pumps = config.all(Pump)
+        # all_heating_elements = config.all(HeatingElement)
+        # all_pumps = config.all(Pump)
 
         # Reset everything
         # all_heating_elements.stop()
         # all_pumps.stop()
         # all_valves.close()
 
-        # Let the Water in
+        # Let the water in
         # config.m13.open()
 
-        #config.hlt_heater.ramp_to(process.mash_temp)
+        # config.hlt_heater.ramp_to(process.mash_temp)
 
 
 class HERMSPrepareWaterTasks(object):

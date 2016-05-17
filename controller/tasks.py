@@ -5,6 +5,7 @@ import time
 
 from .models import Controller
 
+
 class ConnectorTask(Task):
     """A Celery Task that runs at startup and listen to controlbox-connect-py
     events"""
@@ -14,7 +15,8 @@ class ConnectorTask(Task):
             time.sleep(10)
 
 
-#@celeryd_init.connect()
-#def run_connector_task_at_startup(conf=None, **kwargs):
-#    ct = ConnectorTask()
-#    ct.run()
+# XXX Disabled for now since it prevents celery worker to start
+# @celeryd_init.connect()
+# def run_connector_task_at_startup(conf=None, **kwargs):
+#     ct = ConnectorTask()
+#     ct.run()

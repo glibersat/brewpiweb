@@ -9,15 +9,16 @@ from viewflow.flow import (
     If,
     View,
     End,
-    Function
+    Function,
+    flow_job
 )
 from viewflow.contrib.celery import (
     Job as ExecuteAsync
 )
+
 
 class BrewPiFlow(Flow):
     """
     A flow that modelizes some process
     """
     lock_impl = lock.select_for_update_lock
-

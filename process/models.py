@@ -25,4 +25,3 @@ class BrewPiProcessConfiguration(models.Model):
 class BrewPiProcess(Process):
     class Meta:
         abstract = True
-
