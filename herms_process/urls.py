@@ -5,7 +5,7 @@ from viewflow import views as viewflow
 from .flows import HERMSFlow
 
 urlpatterns = patterns('',
-    url(r'^brewpi/',
+    url(r'^herms/',
         include([
             HERMSFlow.instance.urls,
             url('^$', viewflow.ProcessListView.as_view(), name='index'),

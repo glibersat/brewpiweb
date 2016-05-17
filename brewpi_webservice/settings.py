@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'controller',
     'process',
     'devices.core.sensor',
-    'devices.core.actuator'
+    'devices.core.actuator',
+    'herms_process'
 ]
 
 

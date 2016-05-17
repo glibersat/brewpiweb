@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
+from viewflow import views as flow_views
+
+from .models import HERMSProcess
+

@@ -1,11 +1,15 @@
 from django.db import models
+from django.utils.translation import ugettext as _
 
-from devices.core.actuator.models import DS2413Actuator
+from process.models import BrewPiProcess, BrewPiProcessConfiguration
+
+from devices.core.actuator.models import MotorizedValve, ManualValve
 
 
 class HERMSProcessConfiguration(BrewPiProcessConfiguration):
-    valve_waterin = models.ForeignKey(DS2413Actuator, related_name='process_configuration')
+    m2 = models.ForeignKey(MotorizedValve, help_text=_("Cold Water in HLT Valve (Motorized)"))
+    m13 = models.ForeignKey(ManualValve, help_text=_("Tap Cold Water input (Manual)"))
 
 
 class HERMSProcess(BrewPiProcess):
-    pass
+    configuration = models.ForeignKey(HERMSProcessConfiguration, related_name='process')
