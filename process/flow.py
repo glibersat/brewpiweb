@@ -1,16 +1,23 @@
-from viewflow import flow as viewflow_flow
+from viewflow import (
+    flow as viewflow_flow,
+    lock
+)
 from viewflow.base import this, Flow
-
 from viewflow.flow import (
     Start,
     Handler as Execute,
     If,
     View,
-    End
+    End,
+    Function
+)
+from viewflow.contrib.celery import (
+    Job as ExecuteAsync
 )
 
-# XXX Implement: WaitFor(...condition...)
-
 class BrewPiFlow(Flow):
-    pass
+    """
+    A flow that modelizes some process
+    """
+    lock_impl = lock.select_for_update_lock
 

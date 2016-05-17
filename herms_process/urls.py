@@ -4,7 +4,7 @@ from viewflow import views as viewflow
 
 from .flows import HERMSFlow
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^herms/',
         include([
             HERMSFlow.instance.urls,
@@ -15,4 +15,4 @@ urlpatterns = patterns('',
                 viewflow.ProcessDetailView.as_view(), name='details')],
                 namespace=HERMSFlow.instance.namespace),
         {'flow_cls': HERMSFlow})
-)
+]

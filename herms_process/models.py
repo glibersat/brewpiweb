@@ -7,9 +7,16 @@ from devices.core.actuator.models import MotorizedValve, ManualValve
 
 
 class HERMSProcessConfiguration(BrewPiProcessConfiguration):
-    m2 = models.ForeignKey(MotorizedValve, help_text=_("Cold Water in HLT Valve (Motorized)"))
-    m13 = models.ForeignKey(ManualValve, help_text=_("Tap Cold Water input (Manual)"))
+    """
+    Configuration for a HERMS Process Template
+    """
+    m2 = models.ForeignKey(MotorizedValve, help_text=_("Cold Water in HLT Valve"))
+    m13 = models.ForeignKey(ManualValve, help_text=_("Tap Cold Water input)"))
 
 
 class HERMSProcess(BrewPiProcess):
+    """
+    A process that drives a HERMS
+    """
     configuration = models.ForeignKey(HERMSProcessConfiguration, related_name='process')
+

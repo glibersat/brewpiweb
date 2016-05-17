@@ -42,15 +42,19 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'polymorphic',
-    'celery',
     'viewflow',
+
+    'celery',
+    'kombu.transport.django',
+
+    'devices.core.sensor',
+    'devices.core.actuator',
+
     # Local apps
     'authentication',
     'device',
     'controller',
     'process',
-    'devices.core.sensor',
-    'devices.core.actuator',
     'herms_process'
 ]
 
@@ -140,3 +144,8 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 10
 }
+
+# Celery configuration. XXX: Upgrade to rabbitmq or redis later
+BROKER_URL = 'django://'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'

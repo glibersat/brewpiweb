@@ -45,7 +45,11 @@ Create a superuser
     
 # Run
 
-You can run the development server with:
+First, you should the celery worker:
+
+    celery worker -A brewpi_webservice -l info
+
+Then, you can run the development server with:
 
     python manage.py runserver_plus
 
