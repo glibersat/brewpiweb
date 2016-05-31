@@ -1,8 +1,5 @@
 from rest_framework import serializers
 
-from device.models import ElectronicDevice
-from device.serializers import ElectronicDeviceSerializer
-
 from .models import Controller
 
 

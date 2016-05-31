@@ -37,7 +37,7 @@ class ElectronicDevice(Device):
         return self.slot is not None
 
 
-### Sensors  ---------------------------------------------------------
+# Sensors  --------------------------------------------------------
 class Sensor(ElectronicDevice):
     """
     A sensor is an object whose purpose is to detect events or changes
@@ -46,12 +46,13 @@ class Sensor(ElectronicDevice):
     pass
 
 
-### Actuators --------------------------------------------------------
+# Actuators --------------------------------------------------------
 class ManualActuator(Device):
     """
     An Manual Actuator is a type of device moved by human force.
     """
     pass
+
 
 class Actuator(ElectronicDevice):
     """
