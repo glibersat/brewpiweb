@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'polymorphic',
     # Local apps
     'authentication',
+    'datalogging',
+    'datalogging.tests',
     'device',
     'controller',
     'devices.core.sensor',
@@ -136,3 +138,12 @@ REST_FRAMEWORK = {
     # 'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 10
 }
+
+# InfluxDB for timeseries settings
+INFLUXDB_HOST = 'localhost'
+INFLUXDB_PORT = '8086'
+INFLUXDB_USER = ''
+INFLUXDB_PASSWORD = ''
+INFLUXDB_DATABASE = 'brewpi'
+#INFLUXDB_TAGS_HOST = 'test-host'
+INFLUXDB_TIMEOUT = 3
