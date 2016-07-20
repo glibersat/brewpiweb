@@ -10,6 +10,7 @@ requests==2.9.1
 multimethod==0.5
 behave-django==0.3.0
 celery==3.1.23
+kombu==3.0.35
 
 
 # Development
@@ -18,5 +19,6 @@ Werkzeug==0.11.3
 sphinx>=1.4.0
 sphinx-rtd-theme
 
+-e git+https://github.com/BrewPi/connector.git@develop#egg=brewpi_connector
 
 -e git+https://github.com/glibersat/brewpi.service.devices.core#egg=brewpi.service.devices.core

@@ -5,9 +5,10 @@ from django.db import models
 from device.models import Device
 
 
-class AbstractSyncher(object):
+class AbstractSyncher:
     """
     Abstract base class for writing new Model Synchronizers.
+    FIXME This need to be reworked!
     """
     (PROTO_ONEWIRE) = range(0, 1)
 
